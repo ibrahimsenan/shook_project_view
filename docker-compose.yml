@@ -1,0 +1,57 @@
+version: "3.4"
+
+services:
+  shooka_express:
+    image: shooka_express
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: ./services/src/Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/usr/src/app
+      - .:/usr/src/app/node_modules/
+ 
+
+  nginx:
+    build: ./services/nginx
+    ports:
+    - '80:80'
+    depends_on:
+    - shooka_express
+    # - web2
+    # - web2
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - data:/data/db
+
+  cache_server:
+    image: 'redis:alpine'
+    ports:
+      - '6379:6379'
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    container_name: swagger_ui_container
+    ports:
+      - 5001:5001
+    volumes:
+      - ./swagger_ui:/usr/share/nginx/html/swagger_ui
+    environment:
+      # API_URL: swagger_ui/openapi.yaml
+      URLS: "[{ url: \"swagger_ui/openapi.yaml\", name: \"UserManagement\" }, { url: \"swagger_ui/checkapi.yaml\", name: \"CheckServer\" },  ]"
+
+volumes:
+  data:
+  cache:
+
+# networks:
+#   mynetwork:
+#     external: true

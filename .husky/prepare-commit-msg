@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+message="$(cat $1)"
+# Update regex to include optional 'ing' or 'ed' endings
+requiredPattern="^(add(ing|ed)?|cut(ing|ted)?|implement(ing|ed)?|fix(ing|ed)?|bump(ing|ed)?|make(s|ing)?|create(s|d)?|start(s|ed)?|stop(s|ped)?|refactor(s|ed)?|reformat(s|ted)?|optimise(s|d)?|enhance(s|d|ment)?|document(s|ed)?|merge(s|d)?) .*$"
+# Convert message to lowercase and check against the pattern
+if ! [[ "${message,,}" =~ $requiredPattern ]];
+then
+  echo "-"
+  echo "-"
+  echo "-"
+  echo "🚨 Wrong commit message! 😕"
+  echo "The commit message must have this format:"
+  echo "<verb in imperative mood> <what was done>"
+  echo "Allowed verbs in imperative mood and their variations: add, adding, added; fix, fixing, fixed; etc."
+  echo "Example: Add new login button"
+  echo "-"
+  echo "Your commit message was:"
+  echo $message
+  echo "-"
+  echo "For more information, check script in .husky/commit-msg"
+  echo "-"
+  exit 1
+fi

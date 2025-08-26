@@ -1,0 +1,17 @@
+{
+    "cSpell.words": [
+        "folowing"
+    ],
+    "editor.formatOnSave": true,
+    "aliasGoTo.alias":{
+        "@root": ".",
+        "@deep": "./src/api/auth/auth_service",
+        "@routes": "./src/routes",
+        "@modules": "./src/modules",
+        "@api": "./src/api",
+        "@utils": "./src/api/utils",
+        "@auth": "./src/api/auth"
+    },
+    "alias-resolver.type": "custom",
+    "alias-resolver.accessPath": ""
+}
