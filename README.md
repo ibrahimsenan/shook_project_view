@@ -1,4 +1,4 @@
-# Dineo Restaurants Management Service
+ 
 
 <p align="center">
   <img src="https://github.com/ibrahimsenan/shook_project_view/blob/main/UI/artboard321110.png?raw=true" width="700" />
@@ -48,7 +48,7 @@ development/services/mobile/
 development/services/web/
 ```
 
-development/services/mobile/DineoRestaurantApp
+development/services/mobile/shooka_app
 
 ## Services Overview
 
