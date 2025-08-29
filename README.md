@@ -1,8 +1,11 @@
-# Dineo Restaurants Management Service
+ 
 
-[![Docker Image CI](https://github.com/ibrahimsenan/dinein_restaurant_backend/actions/workflows/dinego-docker-image.yml/badge.svg)](https://github.com/ibrahimsenan/dinein_restaurant_backend/actions/workflows/dinego-docker-image.yml)
+<p align="center">
+  <img src="https://github.com/ibrahimsenan/shook_project_view/blob/main/UI/artboard321110.png?raw=true" width="700" />
+</p>
 
 ## Project Discription
+![Project Overview](https://github.com/ibrahimsenan/shook_project_view/blob/main/UI/flow/project_overview_one.jpg?raw=true)
 
 #### Instalation
 
@@ -45,7 +48,7 @@ development/services/mobile/
 development/services/web/
 ```
 
-development/services/mobile/DineoRestaurantApp
+development/services/mobile/shooka_app
 
 ## Services Overview
 
